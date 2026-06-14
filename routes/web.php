@@ -12,6 +12,17 @@ use App\Http\Controllers\Penjual\LaporanController as PenjualLaporanController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\PenggunaController as AdminPenggunaController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Cookie;
+
+Route::get('/set-theme/{theme}', function ($theme) {
+    if (! in_array($theme, ['light', 'dark'])) {
+        abort(400, 'Tema tidak valid');
+    }
+
+    Cookie::queue('theme', $theme, 60 * 24 * 7);
+
+    return redirect()->back();
+})->name('set.theme');
 
 Route::get('/', [BerandaController::class, 'index'])->name('home');
 

@@ -20,7 +20,7 @@
                 <span class="text-orange-500">tanpa antre</span>
             </h1>
 
-            <p class="mt-7 max-w-xl text-base font-medium leading-relaxed text-gray-500">
+            <p class="mt-7 max-w-xl text-base font-medium leading-relaxed text-black-500">
                 Pilih menu favoritmu dari kantin pilihan, tentukan jam pengambilan,
                 dan ambil pesananmu tepat waktu. Hemat waktu istirahatmu untuk
                 hal yang lebih produktif.
