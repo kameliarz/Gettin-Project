@@ -18,7 +18,7 @@ class MenuController extends Controller
         $this->ensureSeller();
 
         $canteen = $this->currentCanteen();
-        $stockFilter = $request->query('stock');
+        $stockFilter = $request->query('stock', 'low');
 
         $categories = DB::table('menu_categories')
             ->select(['id', 'name'])
@@ -253,9 +253,7 @@ class MenuController extends Controller
             ->where('menus.canteen_id', $canteenId);
 
         if ($stockFilter === 'low') {
-            $query
-                ->where('menus.stock_qty', '>', 0)
-                ->where('menus.stock_qty', '<=', 5);
+            $query->where('menus.stock_qty', '<=', 5);
         }
 
         if ($keyword) {

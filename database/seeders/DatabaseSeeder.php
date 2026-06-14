@@ -104,7 +104,7 @@ class DatabaseSeeder extends Seeder
             );
 
             DB::table('users')->updateOrInsert(
-                ['email' => 'baksolaris@gettin.com'],
+                ['email' => 'dharmaw@gettin.com'],
                 [
                     'username' => 'kantin_dharma_wanita',
                     'password' => Hash::make('password123'),
@@ -133,7 +133,7 @@ class DatabaseSeeder extends Seeder
             );
 
             $dharmaUserId = $requireId(
-                DB::table('users')->where('email', 'baksolaris@gettin.com')->value('id'),
+                DB::table('users')->where('email', 'dharmaw@gettin.com')->value('id'),
                 'User penjual Kantin Dharma Wanita tidak ditemukan.'
             );
 

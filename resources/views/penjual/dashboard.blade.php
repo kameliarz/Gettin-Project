@@ -83,7 +83,7 @@
                 x-bind:class="isFilterActive('diproses') ? 'ring-4 ring-orange-200 scale-[1.02]' : 'hover:-translate-y-1'"
                 class="relative overflow-hidden rounded-3xl border border-gray-100 bg-white px-6 py-6 text-left shadow-sm transition duration-300"
             >
-                <div class="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-orange-50"></div>
+                <div class="absolute -right-6 -top-6 h-20 w-20 "></div>
 
                 <p class="relative text-xs font-black uppercase text-gray-950">
                     Pesanan Diproses
@@ -135,8 +135,10 @@
                     Klik untuk lihat selesai
                 </p>
             </button>
-
-            <article class="rounded-3xl border border-red-100 bg-red-50 px-6 py-6 shadow-sm opacity-80">
+            <a
+                href="{{ route('penjual.menu', ['stok_maksimal' => 5]) }}"
+                class="block rounded-3xl border border-red-100 bg-red-50 px-6 py-6 text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:ring-4 hover:ring-red-200"
+            >
                 <p class="text-xs font-black uppercase text-red-700">
                     Stok Menipis
                 </p>
@@ -146,9 +148,9 @@
                 </p>
 
                 <p class="mt-3 text-xs font-bold text-red-600">
-                    Nanti setelah fitur menu dibuat
+                    Klik untuk lihat menu (Stok ≤ 5)
                 </p>
-            </article>
+            </a>
         </section>
 
         <div class="mt-6 flex flex-col gap-3 rounded-3xl border border-gray-200 bg-white px-5 py-4 shadow-sm md:flex-row md:items-center md:justify-between">
@@ -198,7 +200,12 @@
 
                         <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
                             @foreach ($group->orders as $order)
-                                <article class="rounded-3xl border border-gray-200 bg-white p-5 shadow-lg">
+                                {{-- Ditambahkan x-show & x-transition untuk fitur filter card --}}
+                                <article
+                                    x-show="isOrderVisible({{ $order->id }})"
+                                    x-transition
+                                    class="rounded-3xl border border-gray-200 bg-white p-5 shadow-lg"
+                                >
                                     <form
                                         method="POST"
                                         action="{{ route('penjual.dashboard.orders.status', $order->id) }}"
@@ -279,6 +286,7 @@
             </div>
         </section>
 
+        {{-- Modal Pesanan Manual --}}
         <div
             x-cloak
             x-show="modalOpen"
@@ -426,8 +434,15 @@
     <script>
         function sellerDashboard(config) {
             return {
+                // Binding data config ke Alpine state
                 menus: config.menus,
                 pickupSlots: config.pickupSlots,
+                orderStatuses: config.orderStatuses || {},
+                statusCounts: config.statusCounts || { active: 0, diproses: 0, siap_ambil: 0, selesai: 0 },
+
+                // State filter (Default diset ke 'active' sesuai tombol bawaanmu)
+                currentFilter: 'active',
+
                 storeUrl: config.storeUrl,
                 updateUrlTemplate: config.updateUrlTemplate,
 
@@ -439,6 +454,38 @@
                 quantities: {},
                 reservedQuantities: {},
 
+                // Fungsi filter & Helper format angka
+                formatTwoDigits(value) {
+                    return String(value).padStart(2, '0');
+                },
+
+                setStatusFilter(filter) {
+                    this.currentFilter = filter;
+                },
+
+                isFilterActive(filter) {
+                    return this.currentFilter === filter;
+                },
+
+                get selectedFilterLabel() {
+                    const labels = {
+                        active: 'Antrean Aktif',
+                        diproses: 'Pesanan Diproses',
+                        siap_ambil: 'Siap Diambil',
+                        selesai: 'Pesanan Selesai'
+                    };
+                    return labels[this.currentFilter] || 'Semua';
+                },
+
+                isOrderVisible(orderId) {
+                    const status = this.orderStatuses[orderId];
+                    if (this.currentFilter === 'active') {
+                        return status === 'diproses' || status === 'siap_ambil';
+                    }
+                    return status === this.currentFilter;
+                },
+
+                // Fungsi Modal & Logic Keranjang Manual
                 openCreateModal() {
                     this.mode = 'create';
                     this.formAction = this.storeUrl;

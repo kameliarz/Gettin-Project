@@ -262,11 +262,11 @@
 
         <aside class="rounded-3xl bg-orange-500 p-8 text-white shadow-xl shadow-orange-200">
             <h2 class="text-3xl font-black tracking-tight">
-                Status Pesanan
+                Lapar?
             </h2>
 
             <p class="mt-6 text-base font-bold">
-                Tidak ada pesanan aktif
+                Pesan makanan yang kamu suka...
             </p>
 
             <div class="mt-28 border-t-2 border-white/70 pt-5">
