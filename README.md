@@ -23,7 +23,7 @@ Aplikasi ini memiliki tiga jenis pengguna, yaitu pelanggan, penjual, dan admin. 
 | ----------------- | ------------------------------------------------------------------------- |
 | Repository GitHub | [Gettin Project](https://github.com/kameliarz/Gettin-Project)             |
 | Website Deploy    | [Buka Website Gettin](https://gettin-project-production.up.railway.app/)  |
-| Laporan Project   | [Buka Laporan Gettin](1058_Laporan Akhir_PWEB.pdf)                        |
+| Laporan Project   | [Buka Laporan Gettin](https://github.com/kameliarz/Gettin-Project/blob/main/1058_Laporan%20Akhir_PWEB.pdf)                        |
 | Video Demo        | [Tonton Video Demo](https://youtu.be/mIPANe5G3Go)                         |
 
 ---
