@@ -2,9 +2,6 @@
 
 # Gettin
 
-![HTML](https://img.shields.io/badge/HTML-5-orange)
-![CSS](https://img.shields.io/badge/CSS-3-blue)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-777BB4)
 ![Laravel](https://img.shields.io/badge/Laravel-Framework-red)
 ![Blade](https://img.shields.io/badge/Blade-Template-orange)
