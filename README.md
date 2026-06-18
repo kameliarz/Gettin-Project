@@ -1,9 +1,59 @@
+<img align="right" src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f43f_fe0f/512.gif" alt="Squirrel" width="70">
+
 # Gettin
+
+![HTML](https://img.shields.io/badge/HTML-5-orange)
+![CSS](https://img.shields.io/badge/CSS-3-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
+![PHP](https://img.shields.io/badge/PHP-8.3%2B-777BB4)
+![Laravel](https://img.shields.io/badge/Laravel-Framework-red)
+![Blade](https://img.shields.io/badge/Blade-Template-orange)
+![MySQL](https://img.shields.io/badge/MySQL-Database-blue)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-Styling-38B2AC)
 
 Gettin adalah aplikasi web pre-order makanan kantin kampus berbasis Laravel. Aplikasi ini dibuat untuk membantu mahasiswa memesan makanan terlebih dahulu, memilih waktu pengambilan, dan mengambil pesanan di kantin tanpa harus menunggu antrean terlalu lama.
 
 Aplikasi ini memiliki tiga jenis pengguna, yaitu pelanggan, penjual, dan admin. Pelanggan dapat melihat menu, menambahkan makanan ke keranjang, checkout, dan melihat riwayat pesanan. Penjual dapat mengelola menu, waktu pengambilan, pesanan, dan laporan penjualan. Admin dapat memantau sistem serta mengelola data penjual.
 
+---
+
+## Link Project
+
+| Keterangan        | Link                                                                      |
+| ----------------- | ------------------------------------------------------------------------- |
+| Repository GitHub | [Gettin Project](https://github.com/kameliarz/Gettin-Project)             |
+| Website Deploy    | [Buka Website Gettin](https://gettin-project-production.up.railway.app/)  |
+| Laporan Project   | [Buka Laporan Gettin](1058_Laporan Akhir_PWEB.pdf)                        |
+| Video Demo        | [Tonton Video Demo](https://youtu.be/mIPANe5G3Go)                         |
+
+---
+
+## Daftar Isi
+
+* [Gettin](#gettin)
+* [Link Penting](#link-penting)
+* [Tentang Aplikasi](#tentang-aplikasi)
+* [Fitur Utama](#fitur-utama)
+  * [Pelanggan](#pelanggan)
+  * [Penjual](#penjual)
+  * [Admin](#admin)
+* [Teknologi yang Digunakan](#teknologi-yang-digunakan)
+* [Role Pengguna](#role-pengguna)
+* [Struktur Database](#struktur-database)
+* [Instalasi Project](#instalasi-project)
+* [Menjalankan Aplikasi](#menjalankan-aplikasi)
+* [Akun Demo](#akun-demo)
+* [Data Awal Aplikasi](#data-awal-aplikasi)
+* [Halaman Aplikasi](#halaman-aplikasi)
+* [Implementasi AJAX / JSON](#implementasi-ajax--json)
+* [Alur Penggunaan](#alur-penggunaan)
+* [Keamanan dan Validasi](#keamanan-dan-validasi)
+* [Screenshot](#screenshot)
+* [Pengujian Manual](#pengujian-manual)
+* [Struktur Folder Penting](#struktur-folder-penting)
+* [Catatan Pengembangan](#catatan-pengembangan)
+* [Pengembang](#pengembang)
+* [Lisensi](#lisensi)
 ---
 
 ## Fitur Utama
